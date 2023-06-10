@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      Welcome to Meeting room management
+      Welcome to Meeting room management system
     </>
   )
 }
