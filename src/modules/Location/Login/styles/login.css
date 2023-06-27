@@ -1,0 +1,109 @@
+h3{
+    text-align: center;
+    font-size: 36px;
+    color: #333C4E;
+    font-weight: bold;
+    padding-bottom:20px;
+    
+}
+img{
+  padding-top: 30px;
+  margin-bottom: 30px;
+  
+}
+
+form{
+    font-size: 16px;
+    color: #333C4E;
+    height: 100%;
+    background-color: #F0F7F9;
+    
+}
+.form-label{
+    margin-top: 20px;
+    padding-left: 50px;
+}
+
+.form-control{
+    margin-left: 50px;
+    height: 45px;
+    width: 80%;
+    
+}
+.form-group{
+    padding-left: 50px;
+    border: none;
+    padding-bottom:12px;
+}
+
+.dropdown-menu {
+    width: 600px; 
+    text-align: center;
+    border: none;
+    margin-left: 50px;
+    width: 80%;
+     
+    
+  }
+.btn5 {
+    font-size: 16px;
+    color: #333C4E;
+    border-radius: 5px;
+    margin-left: 50px;
+    width: 80%;
+    text-align: left;
+    height: 35px;
+    font-size: 14px;
+    border: none;
+    background-color: white;
+
+  }
+  
+  .btn{
+    background-color: #4CAF4F;
+    color: #FFFFFF;
+    border-radius: 18px;
+    width: 80%;
+    font-size: 16px;
+    margin-left: 50px;
+  }
+ 
+ 
+  .forgot-password-link {
+    color: #4CAF4F;
+    font-weight: bold;
+    font-size: 14px;
+   
+  }
+  .custom-text-color{
+    color: #C3A9A9;
+    font-size: 14px;
+  }
+  .text1{
+    color: #4CAF4F;
+    font-weight: bold;
+    font-size: 14px;
+  }
+ 
+
+  .custom-text3{
+    padding-top: 10px;
+    color: #C3A9A9;
+  }
+
+  
+
+  
+  
+ 
+  
+  
+  
+  
+  
+  
+
+ 
+  
+  
+  

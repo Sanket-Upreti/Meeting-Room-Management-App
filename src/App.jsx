@@ -1,11 +1,13 @@
-import { useState } from 'react'
 import './App.css'
+import Dashboard from './modules/Location/Dashboard'
+import LoginComponent from './modules/Location/Login'
 
 function App() {
 
   return (
     <>
-      Welcome to Meeting room management system
+    {/* <Dashboard /> */}
+    <LoginComponent />
     </>
   )
 }
