@@ -6,26 +6,28 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../styles/teamName.css'
+import { useNavigate } from 'react-router-dom';
 
 const TeamName = () => {
+  const navigate = useNavigate()
   return (
     <>
     <Container>
     <Row>
         <Col xs={12}>
     <Form>
-      <Form.Group class="mb-2">
-        <Form.Label for="exampleInputText" class="form-label">Team name</Form.Label>
+      <Form.Group className="mb-2">
+        <Form.Label htmlFor="exampleInputText" className="form-label">Team name</Form.Label>
         <Form.Control type="text" className="form-control form-text" id="inputText" placeholder="Type your team name" />
       </Form.Group>
 
     <div className="d-grid gap-2">
-      <Button className='btn-color' as="input" size="lg" type="submit" value="Select Team" />
+      <Button className='btn-color' as="input" onClick={()=> navigate("/login")} size="lg" type="submit" value="Select Team" />
     </div>
 
       <div className="text-center text-color">
-        <small class="custom-text3">Don't have a team name? </small> <br/>
-        <small class="custom-text3">Request your administrator or <a href="#" rel='noreferrer noopener' className="navigation-link">Sign Up here</a></small>
+        <small className="custom-text3">Don't have a team name? </small> <br/>
+        <small className="custom-text3">Request your administrator or <a rel='noreferrer noopener' onClick={()=>navigate("/register")} className="navigation-link">Sign Up here</a></small>
       </div>
     </Form>
     </Col>

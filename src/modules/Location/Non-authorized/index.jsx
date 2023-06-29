@@ -1,23 +1,25 @@
 import React from 'react'
-import Header from '../../Layout/header'
-import Dashboard from '../Authorized/Dashboard'
 import TeamName from './TeamName/components/TeamName'
 import Login from './Login/components/login'
 import { useLocation } from 'react-router-dom'
 import Register from './Register/components/Register'
+import HeaderLayout from '../../Layout/Header'
 
 const NonAuthorized = () => {
     const location = useLocation()
     const locationBasedComponent = {
+        "/": <Register />,
         "/login": <Login />,
         "/register": <Register />,
         "/teamname": <TeamName />,
       }
   return (
     <>
-    <Header />
+    <div className='container'>
+    <HeaderLayout />
     <div className='content-wrapper'>
         {locationBasedComponent[location.pathname]}
+    </div>
     </div>
     </>
   )

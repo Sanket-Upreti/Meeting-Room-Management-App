@@ -4,10 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import logo from '../../assets/logo.svg'
 import { useLocation } from 'react-router-dom';
 
-const Header = () => {
+const HeaderLayout = () => {
   let location = useLocation();
 
   const locationBasedMessage = {
+    "/": "Sign up",
     "/login": "Login",
     "/register": "Sign up",
     "/teamname": "Welcome",
@@ -26,4 +27,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default HeaderLayout

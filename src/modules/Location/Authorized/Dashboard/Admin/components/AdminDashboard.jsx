@@ -1,8 +1,11 @@
 import React from 'react'
+import { useAuth } from '../../../../../../utils/auth'
 
 const AdminDashboard = () => {
+  const auth = useAuth()
+
   return (
-    <div>AdminDashboard</div>
+    <div>Welcome {auth.user.username}</div>
   )
 }
 
