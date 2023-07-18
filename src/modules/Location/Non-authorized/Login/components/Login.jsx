@@ -25,7 +25,12 @@ const Login = () => {
   }
 
   const handleLogin = () => {
-    auth.login(user)
+  const data = {
+    username: "Sanket Upreti",
+    role: "admin",
+    token: Math.floor(Math.random() * 7) 
+  }
+    auth.login(data.token)
     navigate(redirectPath , {replace: true})
   }
   return (

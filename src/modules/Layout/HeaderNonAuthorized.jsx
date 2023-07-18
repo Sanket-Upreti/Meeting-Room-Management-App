@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import logo from '../../assets/logo.svg'
 import { useLocation } from 'react-router-dom';
 
-const HeaderLayout = () => {
+const HeaderNonAuthorizedLayout = () => {
   let location = useLocation();
 
   const locationBasedMessage = {
@@ -27,4 +27,4 @@ const HeaderLayout = () => {
   )
 }
 
-export default HeaderLayout
+export default HeaderNonAuthorizedLayout

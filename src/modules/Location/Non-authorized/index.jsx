@@ -3,7 +3,7 @@ import TeamName from './TeamName/components/TeamName'
 import Login from './Login/components/login'
 import { useLocation } from 'react-router-dom'
 import Register from './Register/components/Register'
-import HeaderLayout from '../../Layout/Header'
+import HeaderNonAuthorizedLayout from '../../Layout/HeaderNonAuthorized'
 
 const NonAuthorized = () => {
     const location = useLocation()
@@ -16,7 +16,7 @@ const NonAuthorized = () => {
   return (
     <>
     <div className='container'>
-    <HeaderLayout />
+    <HeaderNonAuthorizedLayout />
     <div className='content-wrapper'>
         {locationBasedComponent[location.pathname]}
     </div>

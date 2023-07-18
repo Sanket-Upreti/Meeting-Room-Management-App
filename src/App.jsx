@@ -8,9 +8,9 @@ import {
 import Authorized from './modules/Location/Authorized/Dashboard';
 import { AuthProvider } from './utils/auth';
 import RequireAuth from './utils/requireAuth';
+import Manage from './modules/Location/Authorized/Dashboard/Manage/components/Manage';
 
 function App() {
-
   return (
     <AuthProvider >
     <Router>
@@ -19,6 +19,7 @@ function App() {
             <Route path="/teamname" element={<NonAuthorized />} />
             <Route path="/register" element={<NonAuthorized />} />
             <Route path="/dashboard" element={<RequireAuth><Authorized /></RequireAuth>} />
+            <Route path="/manage" element={<RequireAuth><Authorized /></RequireAuth>} />
             <Route exact path="/*" element={<NonAuthorized />} />
           </Routes>
     </Router>

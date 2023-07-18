@@ -4,24 +4,66 @@ import SpinnerAnimation from '../../../../helpers/Spinner'
 import AdminDashboard from './Admin/components/AdminDashboard'
 import AttendeeDashboard from './Attendee/components/AttendeeDashboard'
 import HostDashboard from './Host/components/HostDashboard'
+import HeaderDashboard from '../../../Layout/HeaderDashboard'
+import SidebarLayout from '../../../Layout/sidebar'
+import Manage from './Manage/components/Manage'
+import { useLocation } from 'react-router-dom'
 
 const Authorized = () => {
-  const {data: response, isLoading} = useGetUsersQuery()
+  const {data: response, isLoading} = useGetUsersQuery();
+  const location = useLocation()
+  const locationBasedComponent = {
+      "/": <AdminDashboard />,
+      "/Dashboard": <AdminDashboard />,
+      "/dashboard": <AdminDashboard />,
+      "/Manage": <Manage />,
+      "/manage": <Manage />,
+    }
+
+  const data = {
+    firstname: "Sanket",
+    lastname: "Upreti",
+    username: "Sanket Upreti",
+    role: "admin",
+    token: Math.floor(Math.random() * 7) 
+  }
 
   if(isLoading){
     return <SpinnerAnimation />
   }
 
-  // if(response?.users?.role === "admin"){
-    return <AdminDashboard />
-  // }
-
-  if(response?.users?.role === "attendee"){
-    return <AttendeeDashboard />
+  if(data?.role === "admin"){
+    return (<>
+    <div style={{"display": "flex"}}>
+      <SidebarLayout sidebarPages={["Dashboard", "Manage"]}/>
+      <div style={{"display": "block", "width": "100vw", "padding":"16px"}}>
+      <HeaderDashboard data={data} isLoading={isLoading}/>
+      {locationBasedComponent[location.pathname]}
+      </div>
+      </div>
+    </>)
   }
 
-  if(response?.users?.role === "host"){
-    return <HostDashboard />
+  if(data?.role === "attendee"){
+    return (<><div style={{"display": "flex"}}>
+      <SidebarLayout sidebarPages={["Dashboard"]}/>
+      <div style={{"display": "block", "width": "100vw", "padding":"16px"}}>
+      <HeaderDashboard data={data} isLoading={isLoading}/>
+      <AttendeeDashboard />
+      </div>
+      </div>
+    </>)
+  }
+
+  if(data?.role === "host"){
+    return (<><div style={{"display": "flex"}}>
+      <SidebarLayout sidebarPages={["Dashboard"]}/>
+      <div style={{"display": "block", "width": "100vw", "padding":"16px"}}>
+      <HeaderDashboard data={data} isLoading={isLoading}/>
+      <HostDashboard />
+      </div>
+      </div>
+    </>)
   }
 
 }
