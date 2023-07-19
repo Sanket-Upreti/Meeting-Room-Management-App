@@ -44,7 +44,7 @@ const Authorized = () => {
     </>)
   }
 
-  if(data?.role === "attendee"){
+  if(data?.role === "attendee" && location.pathname.toLowerCase() !== "/manage"){
     return (<><div style={{"display": "flex"}}>
       <SidebarLayout sidebarPages={["Dashboard"]}/>
       <div style={{"display": "block", "width": "100vw", "padding":"16px"}}>
@@ -55,7 +55,7 @@ const Authorized = () => {
     </>)
   }
 
-  if(data?.role === "host"){
+  if(data?.role === "host" && location.pathname.toLowerCase() !== "/manage"){
     return (<><div style={{"display": "flex"}}>
       <SidebarLayout sidebarPages={["Dashboard"]}/>
       <div style={{"display": "block", "width": "100vw", "padding":"16px"}}>

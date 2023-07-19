@@ -9,18 +9,19 @@ import Authorized from './modules/Location/Authorized/Dashboard';
 import { AuthProvider } from './utils/auth';
 import RequireAuth from './utils/requireAuth';
 import Manage from './modules/Location/Authorized/Dashboard/Manage/components/Manage';
+import WrongRoute from './modules/Location/NotFound/WrongRoute';
 
 function App() {
   return (
     <AuthProvider >
     <Router>
       <Routes>
-            <Route path="/login" element={<NonAuthorized />} />
-            <Route path="/teamname" element={<NonAuthorized />} />
-            <Route path="/register" element={<NonAuthorized />} />
-            <Route path="/dashboard" element={<RequireAuth><Authorized /></RequireAuth>} />
-            <Route path="/manage" element={<RequireAuth><Authorized /></RequireAuth>} />
-            <Route exact path="/*" element={<NonAuthorized />} />
+            <Route exact path="/login" element={<NonAuthorized />} />
+            <Route exact path="/teamname" element={<NonAuthorized />} />
+            <Route exact  path="/register" element={<NonAuthorized />} />
+            <Route exact path="/dashboard" element={<RequireAuth><Authorized /></RequireAuth>} />
+            <Route exact path="/manage" element={<RequireAuth><Authorized /></RequireAuth>} />
+            <Route exact path="/*" element={<WrongRoute />} />
           </Routes>
     </Router>
     </AuthProvider>

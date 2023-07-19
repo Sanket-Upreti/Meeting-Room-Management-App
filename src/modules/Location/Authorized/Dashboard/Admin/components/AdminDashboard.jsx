@@ -6,6 +6,7 @@ import '../css/admin.css'
 import ContentHeader from '../../../../../../shared/ContentHeader';
 import Table from 'react-bootstrap/Table';
 import { abbreviateNames } from '../../../../../../helpers/AbbrvName';
+import { latestDate } from '../../../../../../shared/LatestDate';
 
 const AdminDashboard = () => {
   const auth = useAuth()
@@ -20,7 +21,6 @@ const AdminDashboard = () => {
 } 
 
   const handleAnnouncementPost = () =>{
-    console.log("announcement posted")
     setIsAlert(true)
     
     setTimeout(()=>{
@@ -57,7 +57,7 @@ const AdminDashboard = () => {
             <p style={{color: "black", textAlign: "center"}}>{data.firstname} {data.lastname}</p>
           </div></div><div className='abbrv-name'>{abbreviateNames(`${data.firstname} ${data.lastname}`)}</div></div>
           </div>
-          <div>Lorem ipsum dolor sit, amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate soluta placeat pariatur quidem! Distinctio beatae voluptate consectetur enim odit aut tenetur iusto officiis molestiae, a, odio facilis assumenda? Dolorem, quis. adipisicing elit. Est sint aspernatur amet! Recusandae, magni expedita voluptas quos excepturi quod consequatur laboriosam modi necessitatibus! Deleniti totam mollitia nihil facere, nobis neque!</div>
+          <div>Meeting at room Red today! Please be there everyone.</div>
           </div>
           </div>
 
@@ -109,7 +109,7 @@ const AdminDashboard = () => {
         <div className='room-status meeting-room-booked'>
           <ContentHeader maxWidth="100" textAlign='center' title="Room Status" />
           <br/>
-          <div className='primary-text-color mb-2'>7-17-2023</div>
+          <div className='primary-text-color mb-2'>{latestDate()}</div>
           <div>
           <Table striped bordered hover size="sm">
       <thead>
@@ -122,22 +122,16 @@ const AdminDashboard = () => {
       </thead>
       <tbody style={{textAlign: "center"}}>
         <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td>Red</td>
+          <td>10:00</td>
+          <td>14:00</td>
+          <td>User1</td>
         </tr>
         <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td>@twitter</td>
-          <td>Rama naathan krishnanatahhan swaami</td>
+          <td>White</td>
+          <td>12:00</td>
+          <td>13:00</td>
+          <td>User2</td>
         </tr>
       </tbody>
       </Table>

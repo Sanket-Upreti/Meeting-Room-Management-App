@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import ContentHeader from '../../../../../../shared/ContentHeader'
 import { abbreviateNames } from '../../../../../../helpers/AbbrvName'
-import { Form, Table } from 'react-bootstrap'
+import { Alert, Form, Table } from 'react-bootstrap'
 import ConfirmationModal from '../../../../../../shared/ConfirmationModal'
+import { latestDate } from '../../../../../../shared/LatestDate'
 
 const AttendeeDashboard = () => {
+  const [isAlert, setIsAlert] = useState(false)
   const [show, setShow] = useState(false);
   const [modalContent, setModalContent] = useState(null);
 
@@ -17,6 +19,11 @@ const AttendeeDashboard = () => {
 
 const handleClose = () => {
   setShow(false);
+  setIsAlert(true)
+    
+  setTimeout(()=>{
+    setIsAlert(false)
+  }, 1000)
 }
 
 const handleShow = () => {
@@ -38,6 +45,11 @@ const attendanceDenied = (value) =>{
 
   return (
     <div style={{padding: "24px 0px 0px 0px", height: "100vh"}}>
+      {isAlert && 
+<Alert key={'success'} variant={'success'}>
+          Successfully Submitted
+        </Alert>
+        }
         <ContentHeader title="All Announcements" />
         <br/>
         <div className='room-status feed-width' >
@@ -50,7 +62,7 @@ const attendanceDenied = (value) =>{
           <p style={{color: "black", textAlign: "center"}}>{data.firstname} {data.lastname}</p>
         </div></div><div className='abbrv-name'>{abbreviateNames(`${data.firstname} ${data.lastname}`)}</div></div>
         </div>
-        <div>Lorem ipsum dolor sit, amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate soluta placeat pariatur quidem! Distinctio beatae voluptate consectetur enim odit aut tenetur iusto officiis molestiae, a, odio facilis assumenda? Dolorem, quis. adipisicing elit. Est sint aspernatur amet! Recusandae, magni expedita voluptas quos excepturi quod consequatur laboriosam modi necessitatibus! Deleniti totam mollitia nihil facere, nobis neque!</div>
+        <div>Meeting at room Red today! Please be there everyone.</div>
         </div>
         </div>
 
@@ -63,7 +75,7 @@ const attendanceDenied = (value) =>{
     <br/>
     <div className='room-status meeting-room-booked mb-5 feed-width' >
     <br/>
-    <div className='primary-text-color mb-2'>7-17-2023</div>
+    <div className='primary-text-color mb-2'>{latestDate()}</div>
     <div>
     <Table striped bordered hover size="sm">
 <thead>
@@ -78,7 +90,7 @@ const attendanceDenied = (value) =>{
 <tbody>
   <tr style={{textAlign: "center"}}>
     <td>Red</td>
-    <td style={{maxWidth: "20px !important"}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque dolorum sunt, accusantium similique earum cum dolorem illo sit laudantium molestias aliquam ea dolor nihil quod in atque rem ipsa officia?</td>
+    <td style={{maxWidth: "20px !important"}}>Discussion about presentation</td>
     <td>07:00</td>
     <td>10:00</td>
     <td><Form.Select  onChange={(event) => attendanceDenied(event.target.value)}>

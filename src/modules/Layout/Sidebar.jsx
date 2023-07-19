@@ -3,6 +3,7 @@ import Image from 'react-bootstrap/Image'
 import "bootstrap/dist/css/bootstrap.min.css"
 import logo from '../../assets/logo.svg'
 import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const SidebarLayout = ({sidebarPages }) => {
   return (
@@ -12,7 +13,7 @@ const SidebarLayout = ({sidebarPages }) => {
       <Navbar.Brand><Image src={logo} alt="Logo" /></Navbar.Brand>
     </Container>
       <Nav>
-            {sidebarPages.map((page)=>{return <Nav.Link key={page} href={page}>{page}</Nav.Link>})}
+            {sidebarPages.map((page)=>{return <Nav.Link key={page} as={Link} to={`/${page.toLowerCase()}`}>{page}</Nav.Link>})}
           </Nav>
   </Navbar>
   </div>

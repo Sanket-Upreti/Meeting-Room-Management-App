@@ -88,7 +88,25 @@ const changeUserRole = () =>{
 <tbody>
   <tr style={{textAlign: "center"}}>
     <td>1</td>
-    <td>Sanket Upreti</td>
+    <td>User1</td>
+    <td><Form.Select  onChange={(event) => changeUserRole(event.target.value)}>
+      <option value="attendee">Attendee</option>
+      <option value="host">Host</option>
+      <option value="admin">Admin</option>
+    </Form.Select></td>
+  </tr>
+  <tr style={{textAlign: "center"}}>
+    <td>2</td>
+    <td>User2</td>
+    <td><Form.Select  onChange={(event) => changeUserRole(event.target.value)}>
+      <option value="attendee">Attendee</option>
+      <option value="host">Host</option>
+      <option value="admin">Admin</option>
+    </Form.Select></td>
+  </tr>
+  <tr style={{textAlign: "center"}}>
+    <td>3</td>
+    <td>User3</td>
     <td><Form.Select  onChange={(event) => changeUserRole(event.target.value)}>
       <option value="attendee">Attendee</option>
       <option value="host">Host</option>
@@ -116,6 +134,11 @@ const changeUserRole = () =>{
   <tr style={{textAlign: "center"}}>
     <td>1</td>
     <td>Red</td>
+    <td><RxPencil1 style={{cursor: "pointer"}} onClick={handleEditRoom}/><span><RxTrash onClick={handleDeleteRoom} style={{cursor: "pointer", color: "red", marginLeft: "8px"}}/></span></td>
+  </tr>
+  <tr style={{textAlign: "center"}}>
+    <td>2</td>
+    <td>White</td>
     <td><RxPencil1 style={{cursor: "pointer"}} onClick={handleEditRoom}/><span><RxTrash onClick={handleDeleteRoom} style={{cursor: "pointer", color: "red", marginLeft: "8px"}}/></span></td>
   </tr>
 </tbody>

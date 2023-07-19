@@ -9,6 +9,7 @@ import { abbreviateNames } from '../../../../../../helpers/AbbrvName';
 import Modal from 'react-bootstrap/Modal';
 import { RxPencil1, RxTrash, RxPerson } from "react-icons/rx";
 import ConfirmationModal from '../../../../../../shared/ConfirmationModal';
+import { latestDate } from '../../../../../../shared/LatestDate';
 
 const HostDashboard = () => {
   const [isAlert, setIsAlert] = useState(false)
@@ -26,6 +27,11 @@ const HostDashboard = () => {
 
 const handleClose = () => {
   setShow(false);
+  setIsAlert(true)
+    
+  setTimeout(()=>{
+    setIsAlert(false)
+  }, 1000)
 }
 
 const handleShow = () => {
@@ -115,7 +121,7 @@ const handleAnnouncementPost = () =>{
         <tr style={{textAlign: "center"}}>
           <td>User2</td>
           <td>No</td>
-          <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet veritatis nesciunt, rem cum exercitationem dolore excepturi placeat aut nisi accusantium quos architecto voluptatum doloribus accusamus alias id. Laboriosam, voluptatum dolor.</td>
+          <td>I am exhausted from my hike yesterday. So i can't attend.</td>
         </tr>
       </tbody>
       </Table>
@@ -129,7 +135,7 @@ const handleAnnouncementPost = () =>{
     <>
     {isAlert && 
     <Alert key={'success'} variant={'success'}>
-              Successfully Posted
+              Successfully Submitted
             </Alert>
             }
     
@@ -153,7 +159,7 @@ const handleAnnouncementPost = () =>{
                 <p style={{color: "black", textAlign: "center"}}>{data.firstname} {data.lastname}</p>
               </div></div><div className='abbrv-name'>{abbreviateNames(`${data.firstname} ${data.lastname}`)}</div></div>
               </div>
-              <div>Lorem ipsum dolor sit, amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate soluta placeat pariatur quidem! Distinctio beatae voluptate consectetur enim odit aut tenetur iusto officiis molestiae, a, odio facilis assumenda? Dolorem, quis. adipisicing elit. Est sint aspernatur amet! Recusandae, magni expedita voluptas quos excepturi quod consequatur laboriosam modi necessitatibus! Deleniti totam mollitia nihil facere, nobis neque!</div>
+              <div>meeting at room red today! Everyone please be there.</div>
               </div>
               </div>
     
@@ -208,7 +214,7 @@ const handleAnnouncementPost = () =>{
           <div className='room-status meeting-room-booked mb-5'>
           <ContentHeader maxWidth="100" textAlign='center' title="Your Booked Rooms" />
           <br/>
-          <div className='primary-text-color mb-2'>7-17-2023</div>
+          <div className='primary-text-color mb-2'>{latestDate()}</div>
           <div>
           <Table striped bordered hover size="sm">
       <thead>

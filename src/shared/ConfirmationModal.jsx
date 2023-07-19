@@ -20,7 +20,7 @@ const ConfirmationModal = ({show, onHide, data, content, btnVariant}) => {
       <Button variant="secondary" onClick={onHide}>
         Cancel
       </Button>
-      {btnVariant === "info" ? <Button variant={btnVariant}>Submit</Button> :  <Button variant={btnVariant}>{btnVariant === "primary" ? "Edit": "Yes"}</Button>}
+      {btnVariant === "info" ? <Button variant={btnVariant} onClick={onHide}>Submit</Button> :  <Button variant={btnVariant} onClick={onHide}>{btnVariant === "primary" ? "Edit": "Yes"}</Button>}
     </Modal.Footer>}
   </Modal>
   )
