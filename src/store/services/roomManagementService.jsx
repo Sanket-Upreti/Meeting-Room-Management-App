@@ -17,7 +17,7 @@ export const roomManagementApi = api.injectEndpoints({
                 }
             },
             provideTags: ['roomManagementApp']
-        })
+        }),
     })
 });
 

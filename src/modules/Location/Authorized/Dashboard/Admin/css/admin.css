@@ -1,0 +1,96 @@
+.admin-announcement{
+    max-width: 80%;
+    margin-top: 8px
+}
+
+.m-t{
+    margin-top: 18px !important;
+}
+
+.admin-button{
+    display: flex !important;
+    justify-content: end !important;
+}
+
+.btn-color{
+    padding: 4px 32px !important;
+}
+
+.admin-feed{
+    display: flex;
+}
+
+.admin-feed:first-child{
+    min-width: 60%;
+}
+
+.announcement-by{
+    padding: 12px;
+}
+
+.primary-text-color{
+    color: #4CAF4F;
+}
+
+.content-header{
+    border: 1px solid black;
+    padding: 12px;
+    color: #4CAF4F;
+}
+
+.room-status{
+    border: 1px solid black;
+    padding: 16px;
+}
+
+.feed-width{
+    max-width: 95%;
+}
+
+.room-features{
+    justify-content: space-between;
+}
+
+.label{
+    min-width: 40px;
+}
+
+.admin-feed-left{
+    min-width: 70% !important;
+}
+
+.admin-feed-right{
+    min-width: 30% !important;
+}
+
+.announcement-threads{
+    background-color: #F0F7F9;
+    margin-bottom: 12px;
+    padding: 12px;
+}
+
+.announcement-threads>div{
+    display: flex;
+}
+
+.avatar-for-threads{
+    min-width: 7%;
+}
+
+.label-room{
+    min-width: 20em;
+}
+
+.tooltip-avatar{
+    transform: rotate(316deg);
+}
+
+.threads-avatar .threads-arrow{
+    display: none;
+}
+
+.threads-avatar:hover .threads-arrow{
+    display: block;
+}
+
+
