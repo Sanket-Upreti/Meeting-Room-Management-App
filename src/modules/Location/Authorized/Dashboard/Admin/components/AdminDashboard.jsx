@@ -125,13 +125,13 @@ const AdminDashboard = () => {
           <td>Red</td>
           <td>10:00</td>
           <td>14:00</td>
-          <td>Sanket Upreti</td>
+          <td>Manish Shrestha</td>
         </tr>
         <tr>
           <td>White</td>
           <td>12:00</td>
           <td>13:00</td>
-          <td>Sanket Upreti</td>
+          <td>Manish Shrestha</td>
         </tr>
       </tbody>
       </Table>
