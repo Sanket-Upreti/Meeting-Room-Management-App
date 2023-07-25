@@ -33,30 +33,30 @@ const TeamName = () => {
     <>
     <Container>
     <Row>
-        <Col xs={12}>
-    <Form onSubmit={formik.handleSubmit}>
-      <Form.Group className="mb-2">
-        <Form.Label htmlFor="exampleInputText" className="form-label">Team name</Form.Label>
-        <Form.Control type="text" onChange={formik.handleChange} value={formik.values.teamName} name="teamName" className="form-control form-text" id="inputText" placeholder="Type your team name" />
-        <CustomError error={formik.errors.teamName} />
-      </Form.Group>
+      <Col xs={12}>
 
-    {/* button to navigate */}
-    <div className="d-grid gap-2">
-      <Button className='btn-color' as="input" size="lg" type="submit" value="Select Team" />
-    </div>
+      {/* form for teamname */}
+        <Form onSubmit={formik.handleSubmit}>
+         <Form.Group className="mb-2">
+            <Form.Label htmlFor="exampleInputText" className="form-label">Team name</Form.Label>
+            <Form.Control type="text" onChange={formik.handleChange} value={formik.values.teamName} name="teamName" className="form-control form-text" id="inputText" placeholder="Type your team name" />
+            <CustomError error={formik.errors.teamName} />
+          </Form.Group>
 
-    {/* footer */}
-      <div className="text-center text-color">
-        <small className="custom-text3">Don't have a team name? </small> <br/>
-        <small className="custom-text3">Request your administrator or <a rel='noreferrer noopener' onClick={()=>navigate("/register")} className="navigation-link">Sign Up here</a></small>
+      {/* button to navigate */}
+      <div className="d-grid gap-2">
+        <Button className='btn-color' as="input" size="lg" type="submit" value="Select Team" />
       </div>
-    </Form>
-    </Col>
-    </Row>
-    </Container>
-</>
-  )
-}
+
+      {/* footer */}
+        <div className="text-center text-color">
+          <small className="custom-text3">Don't have a team name? </small> <br/>
+          <small className="custom-text3">Request your administrator or <a rel='noreferrer noopener' onClick={()=>navigate("/register")} className="navigation-link">Sign Up here</a></small>
+        </div>
+      </Form>
+      </Col>
+      </Row>
+      </Container>
+  </>)}
 
 export default TeamName

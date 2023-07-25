@@ -18,8 +18,8 @@ const HostDashboard = () => {
   const [variant, setVariant] = useState(null);
 
   let data = {
-    firstname: "Sanket",
-    lastname: "Upreti",
+    firstname: "Manish",
+    lastname: "Shrestha",
     username: "Sanket Upreti",
     role: "host",
     room: "white"

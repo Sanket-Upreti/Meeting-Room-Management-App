@@ -25,7 +25,7 @@ const Authorized = () => {
     firstname: "Sanket",
     lastname: "Upreti",
     username: "Sanket Upreti",
-    role: "admin",
+    role: "host",
     token: Math.floor(Math.random() * 7) 
   }
 

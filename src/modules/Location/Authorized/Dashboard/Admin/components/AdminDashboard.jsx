@@ -14,8 +14,8 @@ const AdminDashboard = () => {
   const [isAlert, setIsAlert] = useState(false)
 
   let data = {
-    firstname: "Sanket",
-    lastname: "Upreti",
+    firstname: "Manish",
+    lastname: "Shrestha",
     username: "Sanket Upreti",
     role: "admin"
 } 
@@ -125,13 +125,13 @@ const AdminDashboard = () => {
           <td>Red</td>
           <td>10:00</td>
           <td>14:00</td>
-          <td>Manish Shrestha</td>
+          <td>Manish</td>
         </tr>
         <tr>
           <td>White</td>
           <td>12:00</td>
           <td>13:00</td>
-          <td>Manish Shrestha</td>
+          <td>Manish</td>
         </tr>
       </tbody>
       </Table>
