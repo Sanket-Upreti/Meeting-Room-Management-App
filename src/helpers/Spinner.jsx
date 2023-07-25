@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 
 const SpinnerAnimation = () => {
   return (
-    <Container>
+    <Container style={{marginTop: "48px"}}>
     <Row>
       <Col className='text-align-center'>
     <Spinner animation="border" role="status">

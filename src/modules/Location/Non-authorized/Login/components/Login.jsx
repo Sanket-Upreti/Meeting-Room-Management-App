@@ -34,7 +34,7 @@ const Login = () => {
     role: "admin",
     token: Math.floor(Math.random() * 7) 
   }
-    auth.login(data.token)
+    localStorage.setItem('token', data.token)
     navigate(redirectPath , {replace: true})
   }
 
