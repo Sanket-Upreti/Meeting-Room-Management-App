@@ -13,6 +13,7 @@ const HeaderDashboard = ({isLoading, data}) => {
     const auth = useAuth()
     const dropdownRef = useRef();
 
+    // handling avatar hover
     useEffect(()=>{
       const handleOutsideClick = (e) =>{
         const allowTarget = ["abbrv-name", "avatar"]

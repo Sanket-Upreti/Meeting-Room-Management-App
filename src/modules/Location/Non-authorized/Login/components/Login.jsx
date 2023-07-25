@@ -17,17 +17,21 @@ const Login = () => {
     role: 'attendee'
   }
 
+  // user initialized
   const [user, setUser] = useState(initialState)
   const navigate = useNavigate()
   const auth = useAuth()
 
+  // redirect path based on token
   const redirectPath = "/dashboard" || '/login'
 
+  // handling change of text fields
   const handleChange = (e) =>{
     const {name, value} = e.target;
     setUser({...user, [name]: value})
   }
 
+  // handling login
   const handleLogin = () => {
   const data = {
     username: "Sanket Upreti",
@@ -38,6 +42,7 @@ const Login = () => {
     navigate(redirectPath , {replace: true})
   }
 
+  // handling form
   const formik = useFormik({
     initialValues: initialState,
     validationSchema: loginValidation,
@@ -46,6 +51,7 @@ const Login = () => {
 
   return (
     <>
+    {/* form handling */}
     <Form onSubmit={formik.handleSubmit}>
       <Form.Group className="mb-2">
         <Form.Label htmlFor="inputText" className="form-label">Username</Form.Label>
@@ -77,9 +83,11 @@ const Login = () => {
         </InputGroup>
       </Form.Group>
 
+    {/* login button */}
     <div className="d-grid gap-2">
       <Button className='btn-color' as="input" size="lg" type="submit" value="Login" />
     </div>
+        {/* forget password footer */}
              <div className="text-center text-color">
              <small><a href="#" rel='noreferrer noopener' className="navigation-link non-text-decoration">Forget Password?</a></small><br/>
         <small className="custom-text3">Don't have an account? <a onClick={()=>navigate("/register")} rel='noreferrer noopener' className="navigation-link cursor-pointer">Sign Up</a> </small> 

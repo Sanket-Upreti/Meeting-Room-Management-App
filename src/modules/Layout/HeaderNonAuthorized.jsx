@@ -16,13 +16,15 @@ const HeaderNonAuthorizedLayout = () => {
 
   return (
     <>
+    {/* handling logo for the header */}
     <div className="p-t text-center">
-  <Image src={logo} alt="Logo" />
-</div>
+      <Image src={logo} alt="Logo" />
+    </div>
 
-<div className='m-t'>
+    {/* displaying content based on location */}
+    <div className='m-t'>
       <h2 className="text-center">{locationBasedMessage[location.pathname]}</h2>
-</div>
+    </div>
   </>
   )
 }

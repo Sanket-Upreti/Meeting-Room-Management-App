@@ -4,7 +4,9 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 
 const WrongRoute = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  // displaying wrong route navigation page for the user
   return (
     <>
     <HeaderNonAuthorizedLayout />

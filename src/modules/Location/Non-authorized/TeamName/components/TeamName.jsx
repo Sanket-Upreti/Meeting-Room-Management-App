@@ -17,10 +17,12 @@ const TeamName = () => {
     teamName: ""
   }
 
+  // handling submit
   const handleSubmit=()=>{
     navigate("/login")
   }
 
+  // using formik for handling forms
   const formik = useFormik({
     initialValues: initialState,
     validationSchema: teamnameValidation,
@@ -39,10 +41,12 @@ const TeamName = () => {
         <CustomError error={formik.errors.teamName} />
       </Form.Group>
 
+    {/* button to navigate */}
     <div className="d-grid gap-2">
       <Button className='btn-color' as="input" size="lg" type="submit" value="Select Team" />
     </div>
 
+    {/* footer */}
       <div className="text-center text-color">
         <small className="custom-text3">Don't have a team name? </small> <br/>
         <small className="custom-text3">Request your administrator or <a rel='noreferrer noopener' onClick={()=>navigate("/register")} className="navigation-link">Sign Up here</a></small>

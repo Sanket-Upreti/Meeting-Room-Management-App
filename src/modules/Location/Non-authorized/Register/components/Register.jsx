@@ -19,10 +19,12 @@ const Register = () => {
     termsAndConditions: false,
   }
 
+  // handling submission of form
   const handleSubmit=()=>{
     navigate("/teamname")
   }
 
+  // handling form
   const formik = useFormik({
     initialValues: initialState,
     validationSchema: signupPageValidation,

@@ -6,19 +6,21 @@ import Register from './Register/components/Register'
 import HeaderNonAuthorizedLayout from '../../Layout/HeaderNonAuthorized'
 
 const NonAuthorized = () => {
-    const location = useLocation()
-    const locationBasedComponent = {
-        "/": <Register />,
-        "/login": <Login />,
-        "/register": <Register />,
-        "/teamname": <TeamName />,
-      }
+  const location = useLocation()
+  const locationBasedComponent = {
+    "/": <Register />,
+    "/login": <Login />,
+    "/register": <Register />,
+    "/teamname": <TeamName />,
+  }
 
-      const token = localStorage.getItem('token');
+  // checking for token
+  const token = localStorage.getItem('token');
 
-      if(token){
-        return <Navigate to="/dashboard" />
-      }
+  // navigating to dashboard if token is present
+  if(token){
+    return <Navigate to="/dashboard" />
+  }
 
   return (
     <>

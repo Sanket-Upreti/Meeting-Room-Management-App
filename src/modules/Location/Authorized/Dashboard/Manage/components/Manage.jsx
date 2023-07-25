@@ -88,7 +88,7 @@ const changeUserRole = () =>{
 <tbody>
   <tr style={{textAlign: "center"}}>
     <td>1</td>
-    <td>User1</td>
+    <td>Utsav Pyakurel</td>
     <td><Form.Select  onChange={(event) => changeUserRole(event.target.value)}>
       <option value="attendee">Attendee</option>
       <option value="host">Host</option>
@@ -97,7 +97,16 @@ const changeUserRole = () =>{
   </tr>
   <tr style={{textAlign: "center"}}>
     <td>2</td>
-    <td>User2</td>
+    <td>Manish Shrestha</td>
+    <td><Form.Select  onChange={(event) => changeUserRole(event.target.value)}>
+      <option value="host">Host</option>
+      <option value="attendee">Attendee</option>
+      <option value="admin">Admin</option>
+    </Form.Select></td>
+  </tr>
+  <tr style={{textAlign: "center"}}>
+    <td>3</td>
+    <td>Praphulla Ghimire</td>
     <td><Form.Select  onChange={(event) => changeUserRole(event.target.value)}>
       <option value="attendee">Attendee</option>
       <option value="host">Host</option>
@@ -105,8 +114,8 @@ const changeUserRole = () =>{
     </Form.Select></td>
   </tr>
   <tr style={{textAlign: "center"}}>
-    <td>3</td>
-    <td>User3</td>
+    <td>4</td>
+    <td>Sohan Sah</td>
     <td><Form.Select  onChange={(event) => changeUserRole(event.target.value)}>
       <option value="attendee">Attendee</option>
       <option value="host">Host</option>
