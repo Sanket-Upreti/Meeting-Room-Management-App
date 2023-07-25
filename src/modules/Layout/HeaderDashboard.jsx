@@ -13,6 +13,7 @@ const HeaderDashboard = ({isLoading, data}) => {
     const auth = useAuth()
     const dropdownRef = useRef();
 
+    // handling avatar hover
     useEffect(()=>{
       const handleOutsideClick = (e) =>{
         const allowTarget = ["abbrv-name", "avatar"]
@@ -33,7 +34,7 @@ const HeaderDashboard = ({isLoading, data}) => {
     }
 
     const logoutUser = () =>{
-        auth.logout()
+        localStorage.removeItem('token')
         navigate("/teamname" , {replace: true})
     }
 

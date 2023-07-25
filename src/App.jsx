@@ -14,16 +14,15 @@ import WrongRoute from './modules/Location/NotFound/WrongRoute';
 function App() {
   return (
     <AuthProvider >
-    <Router>
       <Routes>
+            <Route exact path="/" element={<NonAuthorized />} />
             <Route exact path="/login" element={<NonAuthorized />} />
             <Route exact path="/teamname" element={<NonAuthorized />} />
             <Route exact  path="/register" element={<NonAuthorized />} />
-            <Route exact path="/dashboard" element={<RequireAuth><Authorized /></RequireAuth>} />
-            <Route exact path="/manage" element={<RequireAuth><Authorized /></RequireAuth>} />
-            <Route exact path="/*" element={<WrongRoute />} />
+            <Route exact path="/dashboard" element={<Authorized />} />
+            <Route exact path="/manage" element={<Authorized />} />
+            <Route exact path="*" element={<WrongRoute />} />
           </Routes>
-    </Router>
     </AuthProvider>
   )
 }

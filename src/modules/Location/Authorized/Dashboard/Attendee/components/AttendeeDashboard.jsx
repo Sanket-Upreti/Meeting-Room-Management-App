@@ -11,8 +11,8 @@ const AttendeeDashboard = () => {
   const [modalContent, setModalContent] = useState(null);
 
   let data = {
-    firstname: "Sanket",
-    lastname: "Upreti",
+    firstname: "Manish",
+    lastname: "Shrestha",
     username: "Sanket Upreti",
     role: "attendee",
 } 

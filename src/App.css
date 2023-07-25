@@ -48,6 +48,7 @@ img{
 }
 
 .navigation-link{
+    cursor: pointer;
     color: #4caf4f;
 }
 
@@ -56,7 +57,7 @@ img{
 }
 
 .form-checkbox{
-    margin-bottom: 24px !important;
+    margin-bottom: 8px !important;
 }
 
 .cursor-pointer{
@@ -187,6 +188,10 @@ img{
     right: 0%;
     top: 0%;
     z-index: 9999 !important;
+}
+
+.error-container{
+    margin-bottom: 4px;
 }
 
 

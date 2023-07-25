@@ -24,4 +24,3 @@ dist-ssr
 *.sw?
 db.json
 .env
-.prettierrc.json
