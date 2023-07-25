@@ -27,7 +27,6 @@ const HostDashboard = () => {
 
 const handleClose = () => {
   setShow(false);
-  setIsAlert(true)
     
   setTimeout(()=>{
     setIsAlert(false)

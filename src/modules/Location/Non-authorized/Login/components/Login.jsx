@@ -6,6 +6,9 @@ import { BsFillLockFill } from "react-icons/bs";
 import { BsFillPersonBadgeFill } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../../../utils/auth';
+import { useFormik } from 'formik';
+import { loginValidation } from '../../../../Validations/LoginValidation';
+import CustomError from '../../../../../shared/CustomError';
 
 const Login = () => {
   const initialState = {
@@ -13,6 +16,7 @@ const Login = () => {
     password: '',
     role: 'attendee'
   }
+
   const [user, setUser] = useState(initialState)
   const navigate = useNavigate()
   const auth = useAuth()
@@ -33,24 +37,33 @@ const Login = () => {
     auth.login(data.token)
     navigate(redirectPath , {replace: true})
   }
+
+  const formik = useFormik({
+    initialValues: initialState,
+    validationSchema: loginValidation,
+    onSubmit: handleLogin,
+  })
+
   return (
     <>
-    <Form>
+    <Form onSubmit={formik.handleSubmit}>
       <Form.Group className="mb-2">
         <Form.Label htmlFor="inputText" className="form-label">Username</Form.Label>
-        <InputGroup className="mb-4">
+        <InputGroup className="mb-2">
         <InputGroup.Text>
         <BsFillPersonFill />
         </InputGroup.Text>
-        <Form.Control type="text" name="username" onChange={handleChange} className="form-control" id="inputText" placeholder="Type your username" />
+        <Form.Control type="text" name="username" onChange={formik.handleChange} value={formik.values.username} className="form-control" id="inputText" placeholder="Type your username" />
         </InputGroup>
+        <CustomError error={formik.errors.username} />
         <Form.Label htmlFor="inputPassword" className="form-label">Password</Form.Label>
-        <InputGroup className="mb-4">
+        <InputGroup className="mb-2">
         <InputGroup.Text>
         <BsFillLockFill />
         </InputGroup.Text>
-        <Form.Control type="password" name="password" onChange={handleChange} className="form-control" id="inputPassword" placeholder="Type your Password" />
+        <Form.Control type="password" name="password" onChange={formik.handleChange} value={formik.values.password} className="form-control" id="inputPassword" placeholder="Type your Password" />
         </InputGroup>
+        <CustomError error={formik.errors.password} />
         <Form.Label htmlFor="selectRole" className="form-label">Role</Form.Label>
         <InputGroup className="mb-4">
         <InputGroup.Text>
@@ -65,7 +78,7 @@ const Login = () => {
       </Form.Group>
 
     <div className="d-grid gap-2">
-      <Button className='btn-color' onClick={()=>handleLogin()} as="input" size="lg" type="submit" value="Login" />
+      <Button className='btn-color' as="input" size="lg" type="submit" value="Login" />
     </div>
              <div className="text-center text-color">
              <small><a href="#" rel='noreferrer noopener' className="navigation-link non-text-decoration">Forget Password?</a></small><br/>

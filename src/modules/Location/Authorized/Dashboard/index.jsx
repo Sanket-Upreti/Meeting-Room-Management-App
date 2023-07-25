@@ -7,7 +7,8 @@ import HostDashboard from './Host/components/HostDashboard'
 import HeaderDashboard from '../../../Layout/HeaderDashboard'
 import SidebarLayout from '../../../Layout/sidebar'
 import Manage from './Manage/components/Manage'
-import { useLocation } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
+import WrongRoute from '../../NotFound/WrongRoute'
 
 const Authorized = () => {
   const {data: response, isLoading} = useGetUsersQuery();
@@ -24,12 +25,22 @@ const Authorized = () => {
     firstname: "Sanket",
     lastname: "Upreti",
     username: "Sanket Upreti",
-    role: "admin",
+    role: "host",
     token: Math.floor(Math.random() * 7) 
   }
 
   if(isLoading){
     return <SpinnerAnimation />
+  }
+
+  const token = localStorage.getItem('token');
+
+  if(!token){
+    return <Navigate to="/" />
+  }
+
+  if(data?.role !== "admin" && location.pathname.toLowerCase() === "/manage"){
+    return <WrongRoute />
   }
 
   if(data?.role === "admin"){

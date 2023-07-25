@@ -1,7 +1,7 @@
 import React from 'react'
 import TeamName from './TeamName/components/TeamName'
 import Login from './Login/components/login'
-import { useLocation } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 import Register from './Register/components/Register'
 import HeaderNonAuthorizedLayout from '../../Layout/HeaderNonAuthorized'
 
@@ -13,6 +13,13 @@ const NonAuthorized = () => {
         "/register": <Register />,
         "/teamname": <TeamName />,
       }
+
+      const token = localStorage.getItem('token');
+
+      if(token){
+        return <Navigate to="/dashboard" />
+      }
+
   return (
     <>
     <div className='container'>

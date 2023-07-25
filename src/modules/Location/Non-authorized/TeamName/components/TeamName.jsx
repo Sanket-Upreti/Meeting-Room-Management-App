@@ -7,22 +7,40 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../styles/teamName.css'
 import { useNavigate } from 'react-router-dom';
+import { useFormik } from 'formik';
+import { teamnameValidation } from '../../../../Validations/TeamNameValidation';
+import CustomError from '../../../../../shared/CustomError';
 
 const TeamName = () => {
   const navigate = useNavigate()
+  const initialState = {
+    teamName: ""
+  }
+
+  const handleSubmit=()=>{
+    navigate("/login")
+  }
+
+  const formik = useFormik({
+    initialValues: initialState,
+    validationSchema: teamnameValidation,
+    onSubmit: handleSubmit,
+  })
+
   return (
     <>
     <Container>
     <Row>
         <Col xs={12}>
-    <Form>
+    <Form onSubmit={formik.handleSubmit}>
       <Form.Group className="mb-2">
         <Form.Label htmlFor="exampleInputText" className="form-label">Team name</Form.Label>
-        <Form.Control type="text" className="form-control form-text" id="inputText" placeholder="Type your team name" />
+        <Form.Control type="text" onChange={formik.handleChange} value={formik.values.teamName} name="teamName" className="form-control form-text" id="inputText" placeholder="Type your team name" />
+        <CustomError error={formik.errors.teamName} />
       </Form.Group>
 
     <div className="d-grid gap-2">
-      <Button className='btn-color' as="input" onClick={()=> navigate("/login")} size="lg" type="submit" value="Select Team" />
+      <Button className='btn-color' as="input" size="lg" type="submit" value="Select Team" />
     </div>
 
       <div className="text-center text-color">
