@@ -69,9 +69,9 @@ const AdminDashboard = () => {
           <br/>
           <div className='room-status feed-width'>
           <Form.Select aria-label="Default select example">
-      <option value="1">User1</option>
-      <option value="2">User2</option>
-      <option value="3">User3</option>
+      <option value="1">Praphulla Ghimire</option>
+      <option value="2">Sohan Sah</option>
+      <option value="3">Utsav Pyakurel</option>
     </Form.Select>
     <div className="m-t admin-button">
       <Button className='btn-color' onClick={()=>handleAssignMentors()} as="input" size="lg" type="submit" value="Assign" />
@@ -125,13 +125,13 @@ const AdminDashboard = () => {
           <td>Red</td>
           <td>10:00</td>
           <td>14:00</td>
-          <td>User1</td>
+          <td>Sanket Upreti</td>
         </tr>
         <tr>
           <td>White</td>
           <td>12:00</td>
           <td>13:00</td>
-          <td>User2</td>
+          <td>Sanket Upreti</td>
         </tr>
       </tbody>
       </Table>

@@ -113,12 +113,12 @@ const handleAnnouncementPost = () =>{
       </thead>
       <tbody>
         <tr style={{textAlign: "center"}}>
-          <td>User1</td>
+          <td>Praphulla Ghimire</td>
           <td>Yes</td>
           <td></td>
         </tr>
         <tr style={{textAlign: "center"}}>
-          <td>User2</td>
+          <td>Sohan Sah</td>
           <td>No</td>
           <td>I am exhausted from my hike yesterday. So i can't attend.</td>
         </tr>
