@@ -4,5 +4,5 @@ export const latestDate = () => {
     const month = date.getMonth();
     const year = date.getFullYear();
 
-    return `${day}-${month+1}-${year}`;
-}
+    return `${day}-${month + 1}-${year}`;
+};

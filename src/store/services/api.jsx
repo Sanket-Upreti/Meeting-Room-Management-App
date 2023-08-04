@@ -1,17 +1,17 @@
-import {createApi, fetchBaseQuery, retry} from '@reduxjs/toolkit/query/react'
-import { baseUrl } from '../../configs/apiEndpoints'
+import { createApi, fetchBaseQuery, retry } from "@reduxjs/toolkit/query/react";
+import { baseUrl } from "../../configs/apiEndpoints";
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: baseUrl
-})
+    baseUrl: baseUrl,
+});
 
-const baseQueryWithRetry = retry(baseQuery, {maxRetries: 0});
+const baseQueryWithRetry = retry(baseQuery, { maxRetries: 0 });
 
 export const api = createApi({
     reducerPath: "roomApi",
     baseQuery: baseQueryWithRetry,
     tagTypes: ["roomManagementApp"],
-    endpoints: ()=>({})
-})
+    endpoints: () => ({}),
+});
 
-export const featureApi = api.enhanceEndpoints({})
+export const featureApi = api.enhanceEndpoints({});

@@ -1,1 +1,1 @@
-export const baseUrl = import.meta.env.VITE_LOCAL_DB 
+export const baseUrl = import.meta.env.VITE_SERVER_DB;

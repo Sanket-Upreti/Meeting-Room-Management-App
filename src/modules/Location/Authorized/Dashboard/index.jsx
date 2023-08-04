@@ -25,7 +25,7 @@ const Authorized = () => {
     firstname: "Sanket",
     lastname: "Upreti",
     username: "Sanket Upreti",
-    role: "host",
+    role: "admin",
     token: Math.floor(Math.random() * 7) 
   }
 
@@ -56,7 +56,9 @@ const Authorized = () => {
   }
 
   if(data?.role === "attendee" && location.pathname.toLowerCase() !== "/manage"){
-    return (<><div style={{"display": "flex"}}>
+    return (
+    <>
+    <div style={{"display": "flex"}}>
       <SidebarLayout sidebarPages={["Dashboard"]}/>
       <div style={{"display": "block", "width": "100vw", "padding":"16px"}}>
       <HeaderDashboard data={data} isLoading={isLoading}/>

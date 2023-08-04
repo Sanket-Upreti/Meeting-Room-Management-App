@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react'
-import { useAuth } from './auth'
+import React, { useEffect } from "react";
+import { useAuth } from "./auth";
 
-const RequireAuth = ({children}) => {
-    const auth = useAuth()
+const RequireAuth = ({ children }) => {
+    const auth = useAuth();
 
-    useEffect(()=>{
-        const token = localStorage.getItem('token');
-        if(token){
-            return auth.login(token)
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            return auth.login(token);
         }
-    }, [auth])
+    }, [auth]);
 
-    return children
-}
+    return children;
+};
 
-export default RequireAuth
+export default RequireAuth;

@@ -1,27 +1,24 @@
 import { api } from "./api";
 
 export const roomManagementApi = api.injectEndpoints({
-    endpoints: (build) =>({
+    endpoints: (build) => ({
         getUsers: build.query({
-            query: ()=>{
-                return `/users`
+            query: () => {
+                return `/users`;
             },
-            provideTags: ['roomManagementApp']
+            provideTags: ["roomManagementApp"],
         }),
         registerUsers: build.mutation({
-            query: ({data})=>{
+            query: ( data ) => {
                 return {
-                    url: `/users`,
+                    url: `/register`,
                     method: "POST",
-                    body: data
-                }
+                    body: data,
+                };
             },
-            provideTags: ['roomManagementApp']
+            provideTags: ["roomManagementApp"],
         }),
-    })
+    }),
 });
 
-export const {
-    useGetUsersQuery,
-    useRegisterUsersMutation
-} = roomManagementApi
+export const { useGetUsersQuery, useRegisterUsersMutation } = roomManagementApi;
